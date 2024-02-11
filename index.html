@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Todo-List</title>
+</head>
+<body>
+    <div class="container">  
+         <section class="todo-add">
+            <p>
+                Total: <span id="total">0</span> / Completed:
+                <span id="completed">0</span>
+            </p>
+        </section>
+        <header>
+            <h1>Create your Todo-List</h1>
+            <form action="" id="task-form">
+                <input type="text" id="task-input" placeholder="What are your tasks for today?">
+                <input type="submit" id="task-submit" value="Add">
+            </form>
+        </header>
+     
+        <main>
+            <section class="task-list">
+
+                <div id="tasks">
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+</main>
+
+    <script src="main.js"></script>
+</body>
+</html>

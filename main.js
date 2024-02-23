@@ -76,22 +76,25 @@ window.addEventListener("load", () => {
       }
     });
 
-    task_delete_button.addEventListener("click", (a) => {
+    task_delete_button.addEventListener("click", () => {
  
          if (confirm("Are you sure you want to delete this task?")) {
             list.removeChild(task_div);
             totalTasks--;
             totalSpan.textContent = totalTasks;
+            completedTasks--;
+            completedSpan.textContent= completedTasks
             
             if (task_div.classList.contains("checked")){
             completedTasks--;
             completedSpan.textContent = completedTasks;
           }  
-          }
-        })
+          
+        }
+      })
  
     
-    task_completed_button.addEventListener("click", (a) => {
+    task_completed_button.addEventListener("click", () => {
       document.querySelectorAll(".Completed").forEach((a) => {
         (a.onclick = () => {
 
@@ -105,13 +108,13 @@ window.addEventListener("load", () => {
             task_input.style.textDecoration = "line-through";
           completedTasks += 1;
 
-          }
+        }
         completedSpan.textContent = completedTasks;
-
-
+          
+          
         })
       })
-      task_input.setAttribute("readonly", "readonly");
+      // task_input.setAttribute("readonly", "readonly");
     });
 
 

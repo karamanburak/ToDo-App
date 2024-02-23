@@ -6,6 +6,7 @@ let completedTasks = 0;
 window.addEventListener("load", () => {
   const totalSpan = document.querySelector("#total")
   const completedSpan = document.querySelector("#completed")
+  console.log(completedSpan.textContent);
   const form = document.querySelector("#task-form");
   const input = document.querySelector("#task-input");
   const list = document.querySelector("#tasks");
@@ -76,23 +77,24 @@ window.addEventListener("load", () => {
       }
     });
 
-    task_delete_button.addEventListener("click", () => {
- 
-         if (confirm("Are you sure you want to delete this task?")) {
-            list.removeChild(task_div);
+    task_delete_button.addEventListener("click", (e) => {
+
+        
+      if (!task_completed_button.classList.contains("checked")) {
+          e.target.parentElement.parentElement.remove()
             totalTasks--;
-            totalSpan.textContent = totalTasks;
-            completedTasks--;
-            completedSpan.textContent= completedTasks
             
-            if (task_div.classList.contains("checked")){
+          }  else{
+            e.target.parentElement.parentElement.remove()
+             totalTasks--;
             completedTasks--;
-            completedSpan.textContent = completedTasks;
-          }  
+          }
+          totalSpan.textContent = totalTasks;
+          completedSpan.textContent = completedTasks;
           
-        }
+          
       })
- 
+   
     
     task_completed_button.addEventListener("click", () => {
       document.querySelectorAll(".Completed").forEach((a) => {
